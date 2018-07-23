@@ -36,7 +36,10 @@ def writeFile(name):
         if (not num.isnumeric()):
             print("Input Error: The NUMBER of books must be a NUMBER... ")
         else:
-            cond = True
+            if (num == unicode("0", 'utf-8')):
+                print("Input Error: So, you want an empty file? Try again")
+            else:
+                cond = True
     fd.write(str(num) + "\n") #Read format requires first line to be the number of books in the file
     # The program asumes that the user will write different books every line
     for i in xrange(int(num)):
